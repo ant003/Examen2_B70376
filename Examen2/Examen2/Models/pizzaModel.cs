@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Examen.Models
+{
+    public class pizzaModel
+    {
+        private List<String> ingredients { set; get; }
+        private String size { set; get; }
+
+        private IDictionary<String, double> prices { set; get; }
+
+        public pizzaModel(List<String> ingredients, String size)
+        {
+            this.ingredients = ingredients;
+            this.size = size;
+            this.initiatePrices();
+        }
+
+        private void initiatePrices()
+        {
+            this.prices = new Dictionary<String, double>();
+            this.prices.Add("Jamón", 250);
+            this.prices.Add("Hongos", 120);
+            this.prices.Add("Cebolla", 75);
+            this.prices.Add("Carne molida", 200);
+            this.prices.Add("Chile", 110);
+            this.prices.Add("Jalapeño", 300);
+            this.prices.Add("Tomate", 220);
+            this.prices.Add("Piña", 170);
+            this.prices.Add("Peperoni", 310);
+            this.prices.Add("Individual", 1000);
+            this.prices.Add("Pequeña", 3000);
+            this.prices.Add("Mediana", 3500);
+            this.prices.Add("Grande", 5000);
+            this.prices.Add("Extra grande", 6500);
+        }
+    }
+}
