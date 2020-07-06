@@ -16,10 +16,10 @@ namespace Examen.Models
         {
             this.ingredients = ingredients;
             this.size = size;
-            this.initiatePrices();
+            this.InitiatePrices();
         }
 
-        private void initiatePrices()
+        private void InitiatePrices()
         {
             this.prices = new Dictionary<String, double>();
             this.prices.Add("Jamón", 250);
