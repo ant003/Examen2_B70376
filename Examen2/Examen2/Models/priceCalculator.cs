@@ -28,6 +28,7 @@ namespace Examen.Models
 
         public double CalculatePriceWithTax(double totalPrice, double taxRate)
         {
+
             return totalPrice + totalPrice * (taxRate / 100);
         }
 
