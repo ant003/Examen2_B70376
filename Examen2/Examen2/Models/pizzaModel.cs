@@ -7,10 +7,10 @@ namespace Examen.Models
 {
     public class pizzaModel
     {
-        private List<String> ingredients { set; get; }
-        private String size { set; get; }
-
+        private List<String> ingredients;
+        private String size;
         private IDictionary<String, double> prices { set; get; }
+       
 
         public pizzaModel(List<String> ingredients, String size)
         {
@@ -36,6 +36,24 @@ namespace Examen.Models
             this.prices.Add("Mediana", 3500);
             this.prices.Add("Grande", 5000);
             this.prices.Add("Extra grande", 6500);
+        }
+
+        public List<String> Ingredients
+        {
+            get { return ingredients; }   
+            set { ingredients = value; }
+        }
+
+        public String Size
+        {
+            get { return size; }
+            set { size = value; }
+        }
+
+        public IDictionary<String, double> Prices
+        {
+            get { return prices; }
+            set { prices = value; }
         }
     }
 }

@@ -12,15 +12,20 @@ namespace Examen.Models
 
         }
 
-        public double CaculatePartialPrice(double[] prices)
+        public double CaculatePartialPrice(pizzaModel pizza)
         {
             double partialTotalPrice = 0;
 
-            foreach(int price in prices)
+            double value = 0;
+
+            foreach(String ingredient in pizza.Ingredients)
             {
-                partialTotalPrice += price;
+                pizza.Prices.TryGetValue(ingredient, out value);
+                partialTotalPrice += value;
             }
 
+            pizza.Prices.TryGetValue(pizza.Size, out value);
+            partialTotalPrice += value;
             return partialTotalPrice;
         }
 
