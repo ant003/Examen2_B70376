@@ -12,6 +12,11 @@ namespace Examen.Models
 
         }
 
+        public double CalculateTotalPrice(pizzaModel pizza, double taxRate)
+        {
+            return CalculatePriceWithTax(CaculatePartialPrice(pizza), taxRate);
+        }
+
         public double CaculatePartialPrice(pizzaModel pizza)
         {
             double partialTotalPrice = 0;

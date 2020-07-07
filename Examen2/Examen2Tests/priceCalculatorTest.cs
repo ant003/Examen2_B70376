@@ -1,5 +1,7 @@
 using Examen.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System;
 
 namespace Examen2Tests
 {
@@ -9,26 +11,40 @@ namespace Examen2Tests
         priceCalculator calculator = new priceCalculator();
 
         [TestMethod]
-        public void CaculatePartialPriceGiven5Times5Get25()
+        public void CaculatePartialPriceGivenPizzaWithTomateJamonHongosGet590()
         {
-            double[] prices = new double[5];
+            List<String> ingredients = new List<String>();
+            ingredients.Add("Tomate");
+            ingredients.Add("Jamón");
+            ingredients.Add("Hongos");
 
-            for(int i = 0; i < 5; ++i)
-            {
-                prices[i] = 5;
-            }
+            pizzaModel pizza = new pizzaModel(ingredients, "Individual");
 
-            double actual = calculator.CaculatePartialPrice(prices);
+            double actual = calculator.CaculatePartialPrice(pizza);
 
-            Assert.AreEqual(25, actual);
+            Assert.AreEqual(1590, actual);
 
         }
 
         [TestMethod]
         public void CalculatePriceWithTaxGiven6000And13Get6780()
         {
-            double actual = calculator.CalculatePriceWithTax(6000, 13);
-            Assert.AreEqual(6780, actual);
+            double actual = calculator.CalculatePriceWithTax(1590, 13);
+            Assert.AreEqual(1796.7, actual);
+        }
+
+        [TestMethod]
+        public void CalculateTotalPricePizzaWithCebollaJamonHongosIndividualGet1632()
+        {
+            List<String> ingredients = new List<String>();
+            ingredients.Add("Cebolla");
+            ingredients.Add("Jamón");
+            ingredients.Add("Hongos");
+
+            pizzaModel pizza = new pizzaModel(ingredients, "Individual");
+
+            double actual = calculator.CalculateTotalPrice(pizza, 13);
+            Assert.AreEqual(1632.85, actual);
         }
     }
 }

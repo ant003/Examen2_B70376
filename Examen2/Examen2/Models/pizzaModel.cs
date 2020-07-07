@@ -10,7 +10,11 @@ namespace Examen.Models
         private List<String> ingredients;
         private String size;
         private IDictionary<String, double> prices { set; get; }
-       
+
+        public pizzaModel()
+        {
+            this.ingredients = new List<String>();
+        }
 
         public pizzaModel(List<String> ingredients, String size)
         {

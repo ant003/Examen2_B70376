@@ -65,18 +65,16 @@
             <div class="question">
                 <p>Tamaño de la pizza</p>
                 <div class="question-answer">
-                    <input type="radio" value="none" id="radio_1" name="Tamaño" />
+                    <input type="radio" value="Individual" id="radio_1" name="Tamaño" />
                     <label for="radio_1" class="radio"><span>Individual</span></label>
-                    <input type="radio" value="none" id="radio_2" name="Tamaño" />
+                    <input type="radio" value="Pequeña" id="radio_2" name="Tamaño" />
                     <label for="radio_2" class="radio"><span>Pequeña</span></label>
-                    <input type="radio" value="none" id="radio_3" name="Tamaño" />
-                    <label for="radio_3" class="radio"><span>Pequeña</span></label>
-                    <input type="radio" value="none" id="radio_4" name="Tamaño" />
-                    <label for="radio_4" class="radio"><span>Mediana</span></label>
-                    <input type="radio" value="none" id="radio_5" name="Tamaño" />
-                    <label for="radio_5" class="radio"><span>Grande</span></label>
-                    <input type="radio" value="none" id="radio_6" name="Tamaño" />
-                    <label for="radio_6" class="radio"><span>Extra grande</span></label>
+                    <input type="radio" value="Mediana" id="radio_3" name="Tamaño" />
+                    <label for="radio_3" class="radio"><span>Mediana</span></label>
+                    <input type="radio" value="Grande" id="radio_4" name="Tamaño" />
+                    <label for="radio_4" class="radio"><span>Grande</span></label>
+                    <input type="radio" value="Extra grande" id="radio_5" name="Tamaño" />
+                    <label for="radio_5" class="radio"><span>Extra grande</span></label>
                 </div>
             </div>
 
@@ -86,13 +84,14 @@
             </div>
 
             <div class="btn-block">
-                <button id ="btn" type="submit">Confirmar orden</button>
+            <button id="btn" type="submit">Confirmar orden</button>
             </div>
 
-            <label>Precio final: </label>
+            <label>Precio final: @Model.totalPrice</label>
 
         </form>
     </div>
 </body>
 </html>
+
 
