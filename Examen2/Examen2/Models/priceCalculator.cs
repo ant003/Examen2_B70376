@@ -7,14 +7,12 @@ namespace Examen.Models
 {
     public class priceCalculator
     {
-        private int[] prices { set; get; }
-
-        public priceCalculator(int[] prices)
+        public priceCalculator()
         {
-            this.prices = prices;
+
         }
 
-        public double CaculatePartialPrice()
+        public double CaculatePartialPrice(double[] prices)
         {
             double partialTotalPrice = 0;
 
@@ -28,7 +26,6 @@ namespace Examen.Models
 
         public double CalculatePriceWithTax(double totalPrice, double taxRate)
         {
-
             return totalPrice + totalPrice * (taxRate / 100);
         }
 
