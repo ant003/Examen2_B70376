@@ -215,6 +215,18 @@ button {
         background: #0666a3;
     }
 
+.btn-good {
+    margin-top: 10px;
+    text-align: center;
+    background-color: #32ab4c;
+}
+
+.btn-bad {
+    margin-top: 10px;
+    text-align: center;
+    background-color: #bf244b;
+}
+
 @media (min-width: 568px) {
     .city-item {
         display: flex;

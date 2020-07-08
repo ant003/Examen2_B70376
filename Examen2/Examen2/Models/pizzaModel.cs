@@ -14,6 +14,7 @@ namespace Examen.Models
         public pizzaModel()
         {
             this.ingredients = new List<String>();
+            this.InitiatePrices();
         }
 
         public pizzaModel(List<String> ingredients, String size)

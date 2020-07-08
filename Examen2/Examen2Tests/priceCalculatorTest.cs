@@ -46,5 +46,32 @@ namespace Examen2Tests
             double actual = calculator.CalculateTotalPrice(pizza, 13);
             Assert.AreEqual(1632.85, actual);
         }
+
+        [TestMethod]
+        public void GetIngredientesGivenCebollaJamonHongosGetCebollaJamonHongos()
+        {
+            List<String> ingredients = new List<String>();
+            ingredients.Add("Cebolla");
+            ingredients.Add("Jamón");
+            ingredients.Add("Hongos");
+
+            pizzaModel pizza = new pizzaModel(ingredients, "Individual");
+            List<String> actual = pizza.Ingredients;
+
+            CollectionAssert.AreEqual(ingredients, actual);
+        }
+
+        [TestMethod]
+        public void GetSizeGivenSizeGrandeGetSizeGrande()
+        {
+            pizzaModel pizza = new pizzaModel();
+            pizza.Size = "Grande";
+
+            String actual = pizza.Size;
+
+            Assert.AreEqual("Grande", actual);
+        }
+
+
     }
 }
