@@ -9,7 +9,7 @@ namespace Examen.Models
     {
         private List<String> ingredients;
         private String size;
-        private IDictionary<String, double> prices { set; get; }
+        private IDictionary<String, double> prices;
 
         public pizzaModel()
         {
