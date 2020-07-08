@@ -21,9 +21,10 @@
                     <h1>Pizzería la hormiga</h1>
                 </div>
                 <div class="question">
-                    <h3>@Model.feedback</h3>
-                    <p>Ingredientes</p>
-                    <small>Por favor marque los ingredientes que desea en su pizza</small>
+                    <h3 class="feedback">@Model.feedback</h3>
+                    <h3 class="ErrorMessage">@Model.error</h3>
+                    <h2>Ingredientes</h2>
+                    
                     <div class="question-answer checkbox-item">
                         <div>
                             <input type="checkbox" value="Jamón" id="check_1" name="Jamón" />
@@ -66,7 +67,7 @@
                 <br />
 
                 <div class="question">
-                    <p>Tamaño de la pizza</p>
+                    <h2>Tamaño de la pizza</h2>
                     <div class="question-answer">
                         <input type="radio" value="Individual" id="radio_1" name="Tamaño" />
                         <label for="radio_1" class="radio"><span>Individual</span></label>
@@ -83,11 +84,13 @@
 
                 <div class="item">
                     <p>Dirección de envío<span class="required">*</span></p>
-                    <textarea rows="3" required></textarea>
+                    <textarea name="direccion" rows="3" required></textarea>
                 </div>
 
                 <div class="btn-block">
-                    <button id="btn" type="submit">Generar factura</button>
+                    <div class="btn-block">
+                        <button type="submit" asp-page-handler="Factura">Generar Factura</button>
+                    </div>
                 </div>
 
             </form>
@@ -124,14 +127,19 @@
                     </tr>
 
                 </table>
+                <label>Precio sin impuestos ₡@Model.partialPrice</label>
+                <br />
+                <h4>Precio final: ₡@Model.totalPrice</h4>
 
-                <label>Precio final: ₡@Model.totalPrice</label>
-
+                <h4>Su pedido se enviará a la dirección: @Model.direccion</h4>
 
                 <div class="btn-block">
-                    <button id="btn" type="submit">Confirmar orden</button>
+                    <button type="submit" asp-page-handler="Confirmar">Confirmar orden</button>
                 </div>
 
+                <div class="btn-block">
+                    <button type="submit" asp-page-handler="Cancelar">Cancelar</button>
+                </div>
 
             </form>
         }

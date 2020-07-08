@@ -230,3 +230,13 @@ button {
             width: calc(50% - 8px);
         }
 }
+
+.ErrorMessage {
+    font-size: 30px;
+    color: #f00101;
+}
+
+.feedback {
+    font-size: 30px;
+    color: #328d16;
+}
